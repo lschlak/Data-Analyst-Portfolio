@@ -24,7 +24,6 @@ local files
 local vars A B C D E F G H I J K L M N O P Q R S TU V W X Y Z AA AB AC AD AE AF AG AH AI AJ AK AL AM AN AO AP
 
 //Loop Through and Create Files
-
 local sourcefiles: dir "$sourcepath"files "*" 			//Local to store variable names
 
 //Initiate counter
