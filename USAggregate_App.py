@@ -8,11 +8,6 @@ from shiny import reactive
 from shinyswatch import theme
 import datetime
 
-#USAggregate currently REQUIRES you to have a time period...this seems not useful 
-#Needs to be np.nan in the example dataframe on github
-
-#Add Shinyswatch to the requirements file!!!
-
 MAX_SIZE = 50000
 
 with ui.div(class_="col-md-10 col-lg-8 py-5 mx-auto text-lg-center text-left"):
@@ -24,11 +19,6 @@ with ui.div(class_="col-md-10 col-lg-8 py-5 mx-auto text-lg-center text-left"):
 ui.page_opts(title="USAggregate", theme=theme.cerulean)
 
 names = ["CSV Upload", "Aggregation"]
-
-
-#Remove tract from the options 
-#check what the lowest level of detail is for each csv 
-
 
 @expressify
 def my_accordion(multiple=True, id="acc_multiple"):
@@ -45,13 +35,6 @@ def my_accordion(multiple=True, id="acc_multiple"):
                                     footer=None,
                                 )
                             ui.modal_show(q)
-        #    @render.text
-        #    def text():
-        #        return "Instructions"
-        #with ui.accordion_panel("CSV Upload"):
-         #    ui.input_file("file1", "Choose your 1st CSV to upload:", multiple=True),
-          #   ui.input_file("file2", "Choose your 2nd CSV to upload:", multiple=True),
-           #  ui.input_file("file3", "Choose your 3rd CSV to upload:", multiple=True)
         
         with ui.accordion_panel("Aggregation Method"):
             ui.input_selectize("geo_level", "Select geographic level of detail", choices=['tract', 'zip', 'city', 'county', 'state'])
@@ -155,13 +138,6 @@ with ui.layout_columns(col_widths=[6,6], height="280px",fill=True):
                                                             dataframe1 = pd.read_csv(f)
                                                             
                                                         return dataframe1
-                                        #with ui.card():
-                                        #    ui.card_header("Local Specifications")
-                                        #    ui.input_selectize("geo_level5", "Column Name", choices=["county", "state", "city", "zip"])
-                                        #    ui.input_selectize("geo_level2", "Geo Level", choices=["county", "state", "city", "zip"])
-                                        #    ui.input_selectize("geo_level3", "Numerical Agg", choices=["county", "state", "city", "zip"])
-                                        #    ui.input_selectize("geo_level4", "String Agg", choices=["county", "state", "city", "zip"])
-                                            
                                             
                                 with ui.nav_panel("CSV #2"):
                                     ui.input_file("file2", "", multiple=True)
@@ -207,15 +183,6 @@ with ui.layout_columns(col_widths=[6,6], height="280px",fill=True):
                                                 dataframe4 = pd.read_csv(f)
 
                                             return dataframe4
-                                
-                            
-
-                            #return result
-                        #f"{names}"
-
-                #return file_name
-
-
     with ui.panel_well():
             ui.h2("Data Download")  
             @render.text
@@ -440,9 +407,3 @@ with ui.layout_columns(col_widths=[6,6], height="280px",fill=True):
                                                     return df
                                                 except IndexError:
                                                         print("")
-
-
-#if input.local_col1() == input.local_col2(): raise Exception("Two local column specifications")
-
-pythonapp3.15.txt
-Displaying pythonapp3.15.txt.
