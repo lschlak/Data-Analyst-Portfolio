@@ -1,14 +1,16 @@
 
-/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-//  Code for Effects of Ideoogical Identification Paper (Writing Sample #1 in IDA Application)
-//	Luke Schlake (Sole Code Author)
-//	Dec 2023
+/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+//  Code for Effects of Ideoogical Identification Paper 
+//  Luke Schlake (Sole Code Author)
+//  Dec 2023
 //  Summary: This code uses data from the Prosecution Project dataset. The data is cleaned and then
 	modeled using cross-validated two-part models to handle excessive zeroes. The results 
 	can be found in the paper: "Effects of Ideological Identification on Sentencing for Criminal 
-	Cases Involving Political Violence in Federal Cases" by Luke Schlake & Ethan Doshi
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
+	Cases Involving Political Violence in Federal Cases" by Luke Schlake & Ethan Doshi. 
 
+	The paper can be read here:
+	https://github.com/lschlak/Data-Analyst-Portfolio/blob/main/Econometrics%20Paper_Hurdle%20Model.pdf
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%*/
 
 
 //%%%%%%%%%%%%%%%%%%%%%%%%%% DATA IMPORT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -24,7 +26,6 @@ forvalues i = 1(1)105 {
   }
 
 // Create Necessary Dummy Variables 
-// All variables for used in regression models begin with CAPITAL LETTERS: 
 
 //Date
 	gen Date = date(date, "MDY")
